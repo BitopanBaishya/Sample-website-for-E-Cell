@@ -1,0 +1,817 @@
+:root {
+  --pcolor: rgb(4, 2, 69);
+  --scolor: rgb(1, 191, 255);
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  overflow-x: hidden;
+  margin: 0px;
+}
+/* The navigation bar */
+nav ul {
+  list-style-type: none;
+}
+#navbar {
+  display: flex;
+  background-color: var(--pcolor);
+  height: 50px;
+  width: 100%;
+  flex-direction: row-reverse;
+  position: fixed;
+  z-index: 10;
+  justify-content: center;
+}
+#home {
+  font-weight: bold;
+  color: var(--scolor);
+}
+#navbarmenu {
+  display: flex;
+  height: 50px;
+  flex-direction: row-reverse;
+  margin: 0px;
+  justify-content: center;
+  align-items: center;
+}
+.navbarbtn {
+  color: #ffffff;
+  background-color: var(--pcolor);
+  font-family: "Oswald", sans-serif;
+  text-decoration-line: none;
+  font-size: 20px;
+  padding: 0px 23px;
+  list-style: none;
+  transition: all;
+  transition-duration: 0.8s;
+}
+.navbarbtn:hover {
+  color: var(--scolor);
+  cursor: pointer;
+}
+#logo {
+  position: absolute;
+  left: 8%;
+  height: 2em;
+  top: 0.5em;
+}
+@media only screen and (max-width: 450px) {
+  #logo {
+    padding: 6px;
+    left: 20px;
+    height: 20px;
+  }
+  #navbarmenu {
+    position: relative;
+    left: -34%;
+  }
+  .navbarbtn {
+    font-size: 8px;
+    height: 10px;
+    width: 5px;
+    margin: -10px;
+  }
+}
+/* The introduction */
+.intro-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 50px;
+  height: 140vh;
+  background-color: rgba(4, 2, 69, 0.8);
+}
+.ecell-name {
+  color: #ffffff;
+  font-family: "Oswald", sans-serif;
+  font-size: 90px;
+  padding-top: 120px;
+  margin: 30px auto;
+  height: 17%;
+}
+.institute-name {
+  color: #ffffff;
+  font-family: "Oswald", sans-serif;
+  font-size: 80px;
+  height: 17%;
+}
+.intro-quote {
+  color: #ffffff;
+  font-family: "Oswald", sans-serif;
+  font-size: 50px;
+  font-style: italic;
+  height: 17%;
+}
+.ourworks {
+  width: 90%;
+  display: flex;
+  margin-top: 50px;
+  justify-content: space-evenly;
+}
+.heading {
+  width: 50vw;
+  color: #ffffff;
+  font-family: "Oswald", sans-serif;
+  font-size: 50px;
+}
+.para {
+  width: 50vw;
+  color: #ffffff;
+  font-size: 25px;
+  font-family: "Oswald", sans-serif;
+}
+.right {
+  display: flex;
+  align-items: center;
+}
+#knowmore {
+  width: 200px;
+  height: 40px;
+  color: white;
+  font-family: "Oswald", sans-serif;
+  font-size: 23px;
+  text-decoration: none;
+  text-align: center;
+  background-color: var(--pcolor);
+  border-radius: 8px;
+  transition: all;
+  transition-duration: 0.1s;
+  margin-top: 50%;
+}
+#knowmore:hover {
+  color: var(--scolor);
+  box-shadow: 2px 2px 5px black;
+  border-radius: 8px;
+}
+#intro-bg {
+  position: absolute;
+  z-index: -1;
+  height: 140vh;
+  width: 100%;
+}
+@media only screen and (max-width: 450px) {
+  .ecell-name {
+    font-size: 25px;
+    height: 10%;
+  }
+  .institute-name {
+    font-size: 25px;
+    height: 10%;
+  }
+  .intro-quote {
+    font-size: 20px;
+  }
+  .heading {
+    position: relative;
+    left: 20px;
+    width: 200%;
+    font-size: 23px;
+  }
+  .para {
+    font-size: 13px;
+    position: relative;
+    width: 80%;
+    left: 20px;
+  }
+  #knowmore {
+    height: 40px;
+    width: 150px;
+    font-size: 17px;
+    padding-top: 10px;
+  }
+}
+/* The about us section */
+#aboutus-section {
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+  align-items: center;
+}
+.aboutus-heading {
+  position: relative;
+  width: 10em;
+  height: 2em;
+  font-family: "Oswald", sans-serif;
+  font-size: 50px;
+  text-align: center;
+  font-weight: bold;
+  color: var(--pcolor);
+  top: 50px;
+}
+.aboutus-para {
+  position: relative;
+  top: 70px;
+  width: 70%;
+  font-size: 30px;
+  font-family: "Oswald", sans-serif;
+  color: var(--pcolor);
+  text-align: justify;
+}
+@media only screen and (max-width: 450px) {
+  .aboutus-heading {
+    font-size: 23px;
+  }
+  .aboutus-para {
+    font-size: 17px;
+  }
+}
+/* The quotes section */
+.slider {
+  display: flex;
+  height: 40vh;
+  width: 600%;
+  background-color: rgba(4, 2, 69, 0.8);
+}
+#pic2 {
+  position: absolute;
+  z-index: -1;
+  height: 40vh;
+  object-fit: cover;
+  width: 100%;
+}
+.quote {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  transition: all;
+  animation: slider 30s infinite;
+}
+@keyframes slider {
+  0% {
+    left: 0vw;
+  }
+  15% {
+    left: 0vw;
+  }
+  17% {
+    left: -99vw;
+  }
+  32% {
+    left: -99vw;
+  }
+  34% {
+    left: -198vw;
+  }
+  49% {
+    left: -198vw;
+  }
+  51% {
+    left: -297vw;
+  }
+  65% {
+    left: -297vw;
+  }
+  67% {
+    left: -396vw;
+  }
+  82% {
+    left: -396vw;
+  }
+  84% {
+    left: -495vw;
+  }
+  98% {
+    left: -495vw;
+  }
+  100% {
+    left: 0vw;
+  }
+}
+.quote-para {
+  text-align: justify;
+  position: relative;
+  top: 50px;
+  color: #ffffff;
+  font-size: 30px;
+  font-family: "Oswald", sans-serif;
+  width: 70%;
+}
+.author {
+  position: relative;
+  top: 100px;
+  color: #ffffff;
+  font-size: 25px;
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+}
+@media only screen and (max-width: 450px) {
+  .quote-para {
+    font-size: 15px;
+  }
+  .author {
+    font-size: 10px;
+  }
+}
+/* The initiatives section */
+.initiatives-section {
+  display: flex;
+  flex-direction: column;
+  height: 92vh;
+  width: 100vw;
+  align-items: center;
+}
+.initiatives-header {
+  position: relative;
+  width: 10em;
+  height: 2em;
+  font-family: "Oswald", sans-serif;
+  font-size: 50px;
+  text-align: center;
+  font-weight: bold;
+  color: var(--pcolor);
+  top: 50px;
+}
+.initiatives-para {
+  position: relative;
+  top: 70px;
+  width: 70%;
+  font-size: 25px;
+  font-family: "Oswald", sans-serif;
+  color: var(--pcolor);
+  text-align: justify;
+}
+.initiatives-body {
+  position: relative;
+  top: 140px;
+  display: flex;
+  max-height: 30vh;
+  min-width: 80%;
+  justify-content: space-between;
+}
+.initiatives {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  width: 200px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 30px;
+  font-family: "Oswald", sans-serif;
+  background-color: var(--pcolor);
+  transition: all;
+  transition-duration: 0.5s;
+}
+.eic-para {
+  display: none;
+  font-size: 15px;
+  text-align: justify;
+  margin: 6px;
+  transition: all;
+}
+#eic:hover {
+  width: 400px;
+  box-shadow: 5px 5px 5px rgb(102, 102, 102);
+}
+#eic:hover .eic-para {
+  display: block;
+}
+.srijan-para {
+  display: none;
+  font-size: 15px;
+  text-align: justify;
+  margin: 6px;
+  transition: all;
+}
+#srijan:hover {
+  width: 400px;
+  box-shadow: 5px 5px 5px rgb(102, 102, 102);
+}
+#srijan:hover .srijan-para {
+  display: block;
+}
+.empressario-para {
+  display: none;
+  font-size: 15px;
+  text-align: justify;
+  margin: 6px;
+  transition: all;
+}
+#empressario:hover {
+  width: 400px;
+  box-shadow: 5px 5px 5px rgb(102, 102, 102);
+}
+#empressario:hover .empressario-para {
+  display: block;
+}
+.incubation-para {
+  display: none;
+  font-size: 15px;
+  text-align: justify;
+  margin: 6px;
+  transition: all;
+}
+#incubation:hover {
+  width: 400px;
+  box-shadow: 5px 5px 5px rgb(102, 102, 102);
+}
+#incubation:hover .incubation-para {
+  display: block;
+}
+@media only screen and (max-width: 450px) {
+  .initiatives-header {
+    font-size: 25px;
+  }
+  .initiatives-para {
+    font-size: 15px;
+  }
+  .initiatives {
+    margin: 3px;
+    font-size: 15px;
+    max-width: 70px;
+    height: 85px;
+  }
+}
+/* The sponsors section */
+.sponsors-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 110vh;
+  background-color: rgba(4, 2, 69, 0.8);
+}
+.sponsors-heading {
+  position: relative;
+  width: 10em;
+  height: 2em;
+  font-family: "Oswald", sans-serif;
+  font-size: 50px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  top: 50px;
+}
+.sponsors-body {
+  position: relative;
+  top: 65px;
+  display: flex;
+  justify-content: space-evenly;
+  height: 80vh;
+  width: 85%;
+}
+.sponsor-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 22.5%;
+}
+.sponsor-row {
+  display: flex;
+  height: 30%;
+  background-color: white;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+  transition: all;
+}
+#pic3 {
+  object-fit: cover;
+  height: 90%;
+  width: 70%;
+  margin: 0px auto;
+}
+#pic4 {
+  object-fit: cover;
+  height: 90%;
+  width: 70%;
+  margin: 0px auto;
+}
+#pic5 {
+  object-fit: cover;
+  height: 43%;
+  width: 84%;
+  margin: 0px auto;
+}
+#pic6 {
+  object-fit: cover;
+  height: 28.9px;
+  width: 80%;
+  margin: 0px auto;
+}
+#pic7 {
+  object-fit: cover;
+  height: 80%;
+  width: 80%;
+  margin: 0px auto;
+}
+#pic8 {
+  object-fit: cover;
+  height: 78%;
+  width: 80%;
+  margin: 0px auto;
+}
+#pic9 {
+  object-fit: cover;
+  height: 40%;
+  width: 90%;
+  margin: 0px auto;
+}
+#pic10 {
+  object-fit: cover;
+  height: 28.9px;
+  width: 80%;
+  margin: 0px auto;
+}
+#pic11 {
+  object-fit: cover;
+  height: 70%;
+  width: 70%;
+  margin: 0px auto;
+}
+#pic12 {
+  object-fit: cover;
+  height: 85%;
+  width: 55%;
+  margin: 0px auto;
+}
+#pic13 {
+  object-fit: cover;
+  height: 80%;
+  width: 60%;
+  margin: 0px auto;
+}
+#pic14 {
+  object-fit: cover;
+  height: 85%;
+  width: 60%;
+  margin: 0px auto;
+}
+#pic15 {
+  position: absolute;
+  z-index: -1;
+  height: 110vh;
+  object-fit: cover;
+  width: 100%;
+}
+@media only screen and (max-width: 450px) {
+  .sponsors-heading {
+    font-size: 23px;
+  }
+  #pic3 {
+    height: 40%;
+  }
+  #pic4 {
+    height: 40%;
+  }
+  #pic5 {
+    width: 90%;
+    height: 15%;
+  }
+  #pic6 {
+    width: 90%;
+    height: 5%;
+  }
+  #pic7 {
+    height: 20%;
+  }
+  #pic8 {
+    height: 20%;
+  }
+  #pic9 {
+    height: 15%;
+  }
+  #pic10 {
+    height: 5%;
+  }
+  #pic11 {
+    height: 40%;
+  }
+  #pic12 {
+    height: 40%;
+  }
+  #pic13 {
+    height: 30%;
+  }
+  #pic14 {
+    height: 40%;
+  }
+}
+/* Get in touch section */
+.getintouch-section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+}
+.getintouch-heading {
+  position: relative;
+  width: 10em;
+  height: 2em;
+  font-family: "Oswald", sans-serif;
+  font-size: 50px;
+  text-align: center;
+  font-weight: bold;
+  color: var(--pcolor);
+  top: 50px;
+}
+.getintouch-para {
+  position: relative;
+  top: 50px;
+  width: 70%;
+  font-size: 25px;
+  font-family: "Oswald", sans-serif;
+  color: var(--pcolor);
+  text-align: center;
+}
+.getintouch-form {
+  display: flex;
+  position: relative;
+  top: 21%;
+  width: 50%;
+  flex-direction: column;
+}
+.form-top {
+  display: flex;
+  justify-content: space-evenly;
+}
+.form {
+  border: 1px solid grey;
+  width: 300px;
+  height: 50px;
+  margin: 5px;
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+}
+#message {
+  height: 175px;
+}
+.submit {
+  display: flex;
+  justify-content: center;
+}
+#submit {
+  border: 1px solid grey;
+  width: 638px;
+  height: 50px;
+  margin: 5px;
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all;
+  transition-duration: 0.3s;
+}
+#submit:hover {
+  background-color: var(--pcolor);
+  color: white;
+}
+@media only screen and (max-width: 450px) {
+  .getintouch-heading {
+    font-size: 25px;
+  }
+  .getintouch-para {
+    font-size: 15px;
+  }
+  .getintouch-form {
+    width: 100%;
+  }
+  form {
+    display: flex;
+    justify-content: center;
+  }
+  .form-left {
+    position: relative;
+    left: 26%;
+    top: -10%;
+  }
+  .form-right {
+    position: relative;
+    left: -24%;
+    top: 110px;
+  }
+  .form {
+    height: 25px;
+  }
+  #message {
+    height: 100px;
+  }
+  #submit {
+    position: absolute;
+    top: 190%;
+    height: 25px;
+    left: 25%;
+    width: 50%;
+    font-size: 15px;
+  }
+}
+/* The footer section */
+.footer-section {
+  height: 60vh;
+  background-color: rgba(4, 2, 69, 0.8);
+}
+.footer-top {
+  display: flex;
+  justify-content: space-evenly;
+  height: 50vh;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  font-family: "Oswald", sans-serif;
+  font-size: 25px;
+  width: 50%;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+#ecell-logo {
+  padding-left: 10px;
+}
+.footer-bottom {
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  padding-top: 15px;
+}
+.footer-socials {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  border: 1px solid white;
+  border-radius: 10px;
+  font-size: 18px;
+  margin: 5px auto;
+}
+.social-logo {
+  margin: 5px;
+}
+.name {
+  color: white;
+  text-decoration: none;
+}
+.nl-para {
+  font-size: 18px;
+}
+.footer-nl {
+  margin: 10px auto;
+}
+.nl-input {
+  height: 38px;
+  width: 270px;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  font-size: 18px;
+  font-family: "Oswald", sans-serif;
+}
+.nl-input::placeholder {
+  color: white;
+  opacity: 0.8;
+}
+#nl-button {
+  position: absolute;
+  cursor: pointer;
+  left: 88.4%;
+  height: 40px;
+  margin: 2px;
+  border-radius: 10px;
+  font-family: "Oswald", sans-serif;
+  color: var(--pcolor);
+}
+#pic16 {
+  position: absolute;
+  z-index: -1;
+  object-fit: cover;
+  width: 100%;
+  height: 60vh;
+}
+@media only screen and (max-width: 450px) {
+  .footer-bottom {
+    font-size: 15px;
+  }
+  .footer {
+    font-size: 15px;
+  }
+  #ecell-logo {
+    display: none;
+  }
+  .footer-socials {
+    font-size: 15px;
+    width: 50%;
+  }
+  .name {
+    font-size: 12px;
+  }
+  .nl-para {
+    font-size: 12px;
+  }
+  .nl-input {
+    font-size: 12px;
+    width: 94%;
+    height: 90%;
+  }
+  #nl-button {
+    position: absolute;
+    left: 80%;
+    height: 4%;
+    width: 10%;
+    font-size: 8px;
+  }
+}
